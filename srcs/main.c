@@ -12,14 +12,20 @@
 
 #include "so_long.h"
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	void	*mlx;
-	void	*mlx_win;
+	t_vars	*vars;
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	mlx_loop(mlx);
-	(void)mlx_win;
-	return (0);
+	if (argc != 2)
+		ft_exit("Error: Invalid number of arguments\n", NULL, 1);
+	vars = ft_calloc(sizeof(t_vars), 1);
+	if (!vars)
+		ft_exit("Error: t_vars malloc failed\n", vars, 1);
+	vars->player = malloc(sizeof(t_pos));
+	if (!vars->player)
+		ft_exit("Error: t_pos malloc failed\n", vars, 1);
+	vars->key = init_key();
+	if (!vars->key)
+		ft_exit("Error: t_key malloc failed\n", vars, 1);
+	(void)argv;
 }
