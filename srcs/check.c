@@ -20,13 +20,20 @@ static void	validate_map(t_check *check, t_vars *vars)
 
 	line_num = 0;
 	prev_len = 0;
+	check->row = 0;
+	check->col = 0;
 	line = get_next_line(check->fd);
 	while (line)
 	{
+		if (check->row == 0)
+			check->col = ft_strlen(line) - 1;
 		validate_map_line(line, &prev_len, &line_num, vars);
+		check->row++;
 		free(line);
 		line = get_next_line(check->fd);
 	}
+	if (check->row == 0 || check->col == 0)
+		ft_exit("Error: Empty map or invalid dimensions", vars, 1);
 	count_elements(NULL, vars);
 	free(line);
 }

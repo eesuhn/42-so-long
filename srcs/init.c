@@ -26,6 +26,8 @@ int	event_loop(t_vars *vars)
 
 void	init_vars(t_vars *vars)
 {
+	if (vars->map_width <= 0 || vars->map_height <= 0)
+		ft_exit("Error: Invalid map dimensions", vars, 1);
 	vars->img->img = mlx_new_image(vars->mlx, vars->map_width * TEX_SIZE,
 			vars->map_height * TEX_SIZE);
 	if (!vars->img->img)

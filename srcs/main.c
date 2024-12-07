@@ -28,4 +28,12 @@ int	main(int argc, char **argv)
 	if (!vars->key)
 		ft_exit("Error: t_key malloc failed\n", vars, 1);
 	parsing(argv[1], vars);
+	vars->img = malloc(sizeof(t_img));
+	if (!vars->img)
+		ft_exit("Error: t_img malloc failed\n", vars, 1);
+	vars->mlx = mlx_init();
+	if (!vars->mlx)
+		ft_exit("Error: mlx_init failed\n", vars, 1);
+	init_vars(vars);
+	return (0);
 }

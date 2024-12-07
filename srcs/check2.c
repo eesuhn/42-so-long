@@ -55,14 +55,14 @@ static void	check_elements_count(int *count, t_vars *vars)
 	i = 0;
 	while (i < 3)
 	{
-		if (count[i++] < 1 || count[2] > 1)
+		if (count[i++] < 1)
 			ft_exit("Error: Invalid number of elements in map", vars, 1);
 	}
 }
 
 void	count_elements(char *str, t_vars *vars)
 {
-	const char	elements[] = {'C', 'E', 'P'};
+	const char	elements[] = {'C', 'P', 'E'};
 	static int	count[3] = {0};
 	int			i;
 	int			j;

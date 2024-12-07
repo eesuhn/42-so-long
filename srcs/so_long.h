@@ -19,11 +19,11 @@
 
 # define TEX_SIZE 64
 
-# define TEX_PLAYER "../textures/player.xpm"
-# define TEX_WALL "../textures/wall.xpm"
-# define TEX_COLLECT "../textures/collect.xpm"
-# define TEX_EXIT "../textures/exit.xpm"
-# define TEX_ZERO "../textures/zero.xpm"
+# define TEX_PLAYER "textures/player.xpm"
+# define TEX_WALL "textures/wall.xpm"
+# define TEX_COLLECT "textures/collect.xpm"
+# define TEX_EXIT "textures/exit.xpm"
+# define TEX_ZERO "textures/zero.xpm"
 
 # define KEY_ESC 65307
 # define KEY_W 119
