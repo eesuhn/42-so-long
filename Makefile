@@ -7,7 +7,9 @@ CFLAGS = -Wall -Wextra -Werror
 SRCDIR = srcs/
 OBJDIR = objs/
 SRC_FILES = \
+			exit \
 			main \
+			textures \
 
 SRCS = $(addprefix $(SRCDIR), $(SRC_FILES:=.c))
 OBJS = $(addprefix $(OBJDIR), $(notdir $(SRCS:.c=.o)))
