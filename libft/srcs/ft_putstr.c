@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 15:42:57 by yilim             #+#    #+#             */
-/*   Updated: 2024/12/07 15:42:57 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/06 14:34:38 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/06 14:34:38 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "ft_printf.h"
 
-# include "../mlx-linux/mlx.h"
-# include "../libft/libft.h"
-
-#endif
+int	ft_putstr(char *str)
+{
+	ft_putstr_fd(str, 1);
+	return (ft_strlen(str));
+}

@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_print_u_int.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 15:42:57 by yilim             #+#    #+#             */
-/*   Updated: 2024/12/07 15:42:57 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/07 16:28:09 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/07 16:28:09 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "ft_printf.h"
 
-# include "../mlx-linux/mlx.h"
-# include "../libft/libft.h"
+int	ft_print_u_int(va_list args)
+{
+	unsigned int	n;
+	char			*ui;
+	int				len;
 
-#endif
+	n = va_arg(args, unsigned int);
+	ui = ft_itoa_base(n, "0123456789");
+	len = ft_putstr(ui);
+	free(ui);
+	return (len);
+}

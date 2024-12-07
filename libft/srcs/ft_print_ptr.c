@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 15:42:57 by yilim             #+#    #+#             */
-/*   Updated: 2024/12/07 15:42:57 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/06 15:00:23 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/06 15:00:23 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "ft_printf.h"
 
-# include "../mlx-linux/mlx.h"
-# include "../libft/libft.h"
+int	ft_print_ptr(va_list args)
+{
+	unsigned long	ptr;
+	char			*hex;
+	int				len;
 
-#endif
+	ptr = va_arg(args, unsigned long);
+	hex = ft_itoa_base(ptr, "0123456789abcdef");
+	len = ft_putstr("0x");
+	len += ft_putstr(hex);
+	free(hex);
+	return (len);
+}

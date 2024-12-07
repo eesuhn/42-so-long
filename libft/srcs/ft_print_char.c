@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yilim <yilim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/07 15:42:57 by yilim             #+#    #+#             */
-/*   Updated: 2024/12/07 15:42:57 by yilim            ###   ########.fr       */
+/*   Created: 2024/05/06 13:31:20 by yilim             #+#    #+#             */
+/*   Updated: 2024/05/06 13:31:20 by yilim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "ft_printf.h"
 
-# include "../mlx-linux/mlx.h"
-# include "../libft/libft.h"
+int	ft_print_char(va_list args)
+{
+	char	c;
 
-#endif
+	c = (char)va_arg(args, int);
+	return (ft_putchar(c));
+}

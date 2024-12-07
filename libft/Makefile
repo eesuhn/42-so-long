@@ -43,7 +43,20 @@ SRCS := \
 		ft_lstdelone \
 		ft_lstclear \
 		ft_lstiter \
-		ft_lstmap
+		ft_lstmap \
+		get_next_line_utils \
+		get_next_line \
+		ft_printf \
+		ft_switch \
+		ft_putchar \
+		ft_print_char \
+		ft_putstr \
+		ft_print_str \
+		ft_itoa_base \
+		ft_print_ptr \
+		ft_print_dec_int \
+		ft_print_u_int \
+		ft_print_hex \
 
 SRCS := $(addprefix srcs/, $(addsuffix .c, $(SRCS)))
 
