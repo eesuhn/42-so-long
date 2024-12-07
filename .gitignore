@@ -8,8 +8,5 @@
 .vscode/
 .DS_Store/
 
-# tester
-test*
-
 # so-long
 so_long

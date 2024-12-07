@@ -7,6 +7,3 @@
 *.sw*
 .vscode/
 .DS_Store/
-
-# tester
-test*
