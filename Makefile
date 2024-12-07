@@ -1,12 +1,15 @@
+NAME = so_long
+
 MAKE = make --no-print-directory
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCDIR = srcs/
 OBJDIR = objs/
-SRC_FILES = main.c
+SRC_FILES = \
+			main \
 
-SRCS = $(addprefix $(SRCDIR), $(SRC_FILES))
+SRCS = $(addprefix $(SRCDIR), $(SRC_FILES:=.c))
 OBJS = $(addprefix $(OBJDIR), $(notdir $(SRCS:.c=.o)))
 
 LIBFT_PATH = ./libft
@@ -15,8 +18,6 @@ LIBFT = $(LIBFT_PATH)/libft.a
 MLX_PATH = minilibx-linux
 MLX = $(MLX_PATH)/libmlx.a
 MLX_FLAGS = -L$(MLX_PATH) -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-
-NAME = so_long
 
 all: $(NAME)
 
