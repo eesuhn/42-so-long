@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	load_tex(char *path, t_vars *vars, t_img *tex)
+static void	load_tex(char *path, t_vars *vars, t_img *tex)
 {
 	const int	fd = open(path, O_RDONLY);
 

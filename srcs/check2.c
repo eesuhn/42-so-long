@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	check_walls(char *str, int is_boundary, int len, t_vars *vars)
+static void	check_walls(char *str, int is_boundary, int len, t_vars *vars)
 {
 	int	i;
 
@@ -50,14 +50,12 @@ static void	check_chars(char *str, t_vars *vars)
 
 static void	check_elements_count(int *count, t_vars *vars)
 {
-	int	i;
-
-	i = 0;
-	while (i < 3)
-	{
-		if (count[i++] < 1)
-			ft_exit("Error: Invalid number of elements in map", vars, 1);
-	}
+	if (count[0] < 1)
+		ft_exit("Error: Map must have at least one collectible", vars, 1);
+	if (count[1] != 1)
+		ft_exit("Error: Map must have exactly one player", vars, 1);
+	if (count[2] < 1)
+		ft_exit("Error: Map must have at least one exit", vars, 1);
 }
 
 void	count_elements(char *str, t_vars *vars)

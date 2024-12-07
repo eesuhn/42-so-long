@@ -30,10 +30,12 @@ MLX_FLAGS = -L$(MLX_PATH) -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
-	$(CC) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
+	@echo "Compiling $(NAME)..."
+	@$(CC) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c | $(OBJDIR)
-	$(CC) $(CFLAGS) -I$(MLX_PATH) -c $< -o $@
+	@echo "Compiling $<..."
+	@$(CC) $(CFLAGS) -I$(MLX_PATH) -c $< -o $@
 
 $(OBJDIR):
 	@mkdir -p $(OBJDIR)
@@ -43,7 +45,6 @@ $(MLX):
 	@$(MAKE) -C $(MLX_PATH) > /dev/null 2>&1
 
 $(LIBFT):
-	@echo "Compiling libft..."
 	@$(MAKE) -C $(LIBFT_PATH)
 
 clean:

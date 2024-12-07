@@ -12,14 +12,14 @@
 
 #include "so_long.h"
 
-void	ft_free(void *vars)
+static void	ft_free(void *vars)
 {
 	if (vars)
 		free(vars);
 	vars = NULL;
 }
 
-void	free_img(t_vars *vars)
+static void	free_img(t_vars *vars)
 {
 	int	i;
 
@@ -39,7 +39,7 @@ void	free_img(t_vars *vars)
 	}
 }
 
-void	free_vars(t_vars *vars)
+static void	free_vars(t_vars *vars)
 {
 	int	i;
 

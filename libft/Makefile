@@ -1,6 +1,11 @@
-NAME := libft.a
+NAME = libft.a
 
-SRCS := \
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -g
+
+SRCDIR = srcs/
+OBJDIR = objs/
+SRC_FILES = \
 		ft_isalpha \
  		ft_isdigit \
  		ft_isalnum \
@@ -58,22 +63,23 @@ SRCS := \
 		ft_print_u_int \
 		ft_print_hex \
 
-SRCS := $(addprefix srcs/, $(addsuffix .c, $(SRCS)))
-
-OBJS := $(addprefix objs/, $(notdir $(SRCS:.c=.o)))
-
-CFLAGS := -Wall -Wextra -Werror
+SRCS = $(addprefix $(SRCDIR), $(SRC_FILES:=.c))
+OBJS = $(addprefix $(OBJDIR), $(notdir $(SRCS:.c=.o)))
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	@echo "Compiling libft..."
 	@ar rcs $(NAME) $(OBJS)
 
-objs/%.o: srcs/%.c
-	@cc $(CFLAGS) -c $< -o $@
+$(OBJDIR)%.o: $(SRCDIR)%.c | $(OBJDIR)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	@mkdir -p $(OBJDIR)
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(OBJDIR)
 
 fclean: clean
 	@rm -f $(NAME)

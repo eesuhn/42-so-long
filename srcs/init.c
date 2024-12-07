@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-int	ft_quit(t_vars *vars)
+static int	ft_quit(t_vars *vars)
 {
 	ft_exit("Exit: Close button pressed\n", vars, 0);
 	return (0);
