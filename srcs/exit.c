@@ -64,7 +64,10 @@ void	free_vars(t_vars *vars)
 int	ft_exit(char *msg, t_vars *vars, int code)
 {
 	if (msg)
+	{
 		ft_putstr(msg);
+		ft_putchar('\n');
+	}
 	free_vars(vars);
 	exit(code);
 }

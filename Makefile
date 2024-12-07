@@ -2,7 +2,7 @@ NAME = so_long
 
 MAKE = make --no-print-directory
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRCDIR = srcs/
 OBJDIR = objs/

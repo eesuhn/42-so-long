@@ -27,5 +27,5 @@ int	main(int argc, char **argv)
 	vars->key = init_key();
 	if (!vars->key)
 		ft_exit("Error: t_key malloc failed\n", vars, 1);
-	(void)argv;
+	parsing(argv[1], vars);
 }

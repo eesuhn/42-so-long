@@ -16,18 +16,20 @@ void	check_walls(char *str, int is_boundary, int len, t_vars *vars)
 {
 	int	i;
 
+	if (!str)
+		ft_exit("Error: Null string passed to check_walls", vars, 1);
 	i = 0;
 	if (is_boundary)
 	{
 		while (str[i])
 		{
 			if (str[i] != '1')
-				ft_exit("Error: Map is not surrounded by walls", vars, 1);
+				ft_exit("Error(1): Map is not surrounded by walls", vars, 1);
 			i++;
 		}
 	}
 	else if (str[0] != '1' || str[len - 1] != '1')
-		ft_exit("Error: Map is not surrounded by walls", vars, 1);
+		ft_exit("Error(2): Map is not surrounded by walls", vars, 1);
 }
 
 static void	check_chars(char *str, t_vars *vars)
@@ -39,8 +41,8 @@ static void	check_chars(char *str, t_vars *vars)
 		return ;
 	while (str[i])
 	{
-		if (str[i] != '1' && str[i] != '0' && str[i] != 'P'
-			&& str[i] != 'C' && str[i] != 'E' && str[i] != 'B')
+		if (str[i] != 'C' && str[i] != 'P' && str[i] != 'E'
+			&& str[i] != '1' && str[i] != '0')
 			ft_exit("Error: Invalid character in map", vars, 1);
 		i++;
 	}
@@ -90,7 +92,11 @@ void	validate_map_line(char *line,
 	t_vars *vars)
 {
 	int	curr_len;
+	int	len;
 
+	len = ft_strlen(line);
+	if (line[len - 1] == '\n')
+		line[len - 1] = '\0';
 	curr_len = ft_strlen(line);
 	if (*prev_len && *prev_len != curr_len)
 		ft_exit("Error: Map is not rectangular", vars, 1);

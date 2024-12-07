@@ -28,11 +28,10 @@ static void	validate_map(t_check *check, t_vars *vars)
 		line = get_next_line(check->fd);
 	}
 	count_elements(NULL, vars);
-	if (line_num > 0)
-		check_walls(line, 1, prev_len, vars);
+	free(line);
 }
 
-t_check	init_map(char *filename, t_vars *vars)
+t_check	check_map(char *filename, t_vars *vars)
 {
 	t_check	check;
 

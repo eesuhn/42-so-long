@@ -75,15 +75,15 @@ typedef struct s_vars
 
 typedef struct s_check
 {
-	int		read;
+	char	*read;
 	char	*line;
-	int		width;
-	int		height;
+	int		col;
+	int		row;
 	int		fd;
 }	t_check;
 
 // check.c
-t_check	init_map(char *filename, t_vars *vars);
+t_check	check_map(char *filename, t_vars *vars);
 
 // check2.c
 void	check_walls(char *str, int is_boundary, int len, t_vars *vars);
@@ -103,6 +103,9 @@ void	init_vars(t_vars *vars);
 int		key_press(int keycode, t_vars *vars);
 int		key_release(int keycode, t_vars *vars);
 t_key	*init_key(void);
+
+// parser.c
+void	parsing(char *av, t_vars *vars);
 
 // textures.c
 void	load_textures(t_vars *vars);
