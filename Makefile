@@ -7,10 +7,13 @@ CFLAGS = -Wall -Wextra -Werror
 SRCDIR = srcs/
 OBJDIR = objs/
 SRC_FILES = \
+			check \
+			check2 \
 			exit \
 			init \
 			keys \
 			main \
+			parser \
 			textures \
 			utils \
 

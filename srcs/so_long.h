@@ -73,6 +73,26 @@ typedef struct s_vars
 	t_img	tex[5];
 }	t_vars;
 
+typedef struct s_check
+{
+	int		read;
+	char	*line;
+	int		width;
+	int		height;
+	int		fd;
+}	t_check;
+
+// check.c
+t_check	init_map(char *filename, t_vars *vars);
+
+// check2.c
+void	check_walls(char *str, int is_boundary, int len, t_vars *vars);
+void	count_elements(char *str, t_vars *vars);
+void	validate_map_line(char *line,
+			int *prev_len,
+			int *line_num,
+			t_vars *vars);
+
 // exit.c
 int		ft_exit(char *msg, t_vars *vars, int code);
 
@@ -86,5 +106,8 @@ t_key	*init_key(void);
 
 // textures.c
 void	load_textures(t_vars *vars);
+
+// utils.c
+int		check_is_file(char *av, t_vars *vars);
 
 #endif

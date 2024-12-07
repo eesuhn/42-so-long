@@ -68,7 +68,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // get_next_line
-
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
@@ -78,13 +77,9 @@ char	*read_line(int fd, char *line);
 char	*join_line(char *line, char *buf);
 char	*get_res(char *line);
 char	*next_line(char *line);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-void	*ft_memset(void *s, int c, size_t n);
-char	*ft_strjoin(char const *s1, char const *s2);
 int		check_end_index(char *str);
 
 // ft_printf
-
 int		ft_printf(const char *str, ...);
 int		ft_switch(char c, va_list args);
 int		ft_putchar(char c);
