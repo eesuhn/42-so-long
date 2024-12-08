@@ -69,7 +69,6 @@ OBJS = $(addprefix $(OBJDIR), $(notdir $(SRCS:.c=.o)))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@echo "Compiling libft..."
 	@ar rcs $(NAME) $(OBJS)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c | $(OBJDIR)

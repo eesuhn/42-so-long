@@ -56,3 +56,12 @@ int	key_release(int keycode, t_vars *vars)
 		vars->key->d = 0;
 	return (0);
 }
+
+void	key_event(t_vars *vars)
+{
+	if (vars->collectibles == 0
+		&& vars->map[vars->player->y][vars->player->x] == 'E')
+		ft_exit("Exit: Game completed\n", vars, 0);
+	else
+		player_mov(vars);
+}

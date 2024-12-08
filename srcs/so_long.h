@@ -92,6 +92,10 @@ void	validate_map_line(char *line,
 			int *line_num,
 			t_vars *vars);
 
+// draw.c
+void	draw_map(t_vars *vars);
+void	draw_player(t_vars *vars);
+
 // exit.c
 int		ft_exit(char *msg, t_vars *vars, int code);
 
@@ -102,6 +106,10 @@ void	init_vars(t_vars *vars);
 int		key_press(int keycode, t_vars *vars);
 int		key_release(int keycode, t_vars *vars);
 t_key	*init_key(void);
+void	key_event(t_vars *vars);
+
+// movement.c
+void	player_mov(t_vars *vars);
 
 // parser.c
 void	parsing(char *av, t_vars *vars);

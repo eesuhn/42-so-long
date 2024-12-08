@@ -9,10 +9,12 @@ OBJDIR = objs/
 SRC_FILES = \
 			check \
 			check2 \
+			draw \
 			exit \
 			init \
 			keys \
 			main \
+			movement \
 			parser \
 			textures \
 			utils \
@@ -32,9 +34,10 @@ all: $(NAME)
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
 	@echo "Compiling $(NAME)..."
 	@$(CC) $(OBJS) $(LIBFT) $(MLX_FLAGS) -o $(NAME)
+	@echo "\033[0;32mDone!\033[0m"
 
 $(OBJDIR)%.o: $(SRCDIR)%.c | $(OBJDIR)
-	@echo "Compiling $<..."
+	@echo "> $<"
 	@$(CC) $(CFLAGS) -I$(MLX_PATH) -c $< -o $@
 
 $(OBJDIR):
@@ -45,9 +48,11 @@ $(MLX):
 	@$(MAKE) -C $(MLX_PATH) > /dev/null 2>&1
 
 $(LIBFT):
+	@echo "Compiling libft..."
 	@$(MAKE) -C $(LIBFT_PATH)
 
 clean:
+	@echo "\033[0;33mCleaning...\033[0m"
 	@$(MAKE) -C $(LIBFT_PATH) clean
 	@$(MAKE) -C $(MLX_PATH) clean > /dev/null 2>&1
 	@rm -rf $(OBJDIR)

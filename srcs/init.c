@@ -20,7 +20,9 @@ static int	ft_quit(t_vars *vars)
 
 int	event_loop(t_vars *vars)
 {
-	(void)vars;
+	draw_map(vars);
+	draw_player(vars);
+	key_event(vars);
 	return (0);
 }
 

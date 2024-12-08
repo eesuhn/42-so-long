@@ -64,10 +64,7 @@ static void	free_vars(t_vars *vars)
 int	ft_exit(char *msg, t_vars *vars, int code)
 {
 	if (msg)
-	{
-		ft_putstr(msg);
-		ft_putchar('\n');
-	}
+		ft_printf("%s\n", msg);
 	free_vars(vars);
 	exit(code);
 }
