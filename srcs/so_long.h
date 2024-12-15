@@ -120,4 +120,11 @@ void	load_textures(t_vars *vars);
 // utils.c
 int		check_is_file(char *av, t_vars *vars);
 
+// validate.c
+void	validate_path(t_vars *vars);
+
+// validate2.c
+void	check_reachable(char **map, t_vars *vars);
+void	free_map_copy(char **map_cpy, int height);
+
 #endif

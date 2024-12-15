@@ -18,6 +18,8 @@ SRC_FILES = \
 			parser \
 			textures \
 			utils \
+			validate \
+			validate2 \
 
 SRCS = $(addprefix $(SRCDIR), $(SRC_FILES:=.c))
 OBJS = $(addprefix $(OBJDIR), $(notdir $(SRCS:.c=.o)))

@@ -66,4 +66,5 @@ void	parsing(char *av, t_vars *vars)
 	close(check.fd);
 	vars->map[i] = NULL;
 	parse_value(vars, check);
+	validate_path(vars);
 }
