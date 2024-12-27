@@ -31,6 +31,8 @@ MLX_PATH = mlx-linux
 MLX = $(MLX_PATH)/libmlx.a
 MLX_FLAGS = -L$(MLX_PATH) -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
+MAP ?= maps/maze.ber
+
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
@@ -53,6 +55,9 @@ $(LIBFT):
 	@echo "Compiling libft..."
 	@$(MAKE) -C $(LIBFT_PATH)
 
+run: all
+	@./$(NAME) $(MAP)
+
 clean:
 	@echo "\033[0;33mCleaning...\033[0m"
 	@$(MAKE) -C $(LIBFT_PATH) clean
@@ -65,4 +70,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all run clean fclean re
